@@ -48,7 +48,7 @@ st.markdown("<h2 style='text-align: center; color: cyan;'>Daily Real Time Financ
 st.markdown(
     f"<h2 style='text-align: center; color: lightgreen;'>EGP Now = {egp_price} $</h3>", unsafe_allow_html=True)
 
-crypto, stock = st.tabs(['Crypto', 'Stock'])
+crypto, stock = st.tabs(['Crypto', 'Stock'],)
 
 #######################################
 
