@@ -9,14 +9,7 @@ import streamlit.components.v1 as components
 # Set dark mode
 st.set_page_config(page_title="Egyptian Financial Dashboard",
                    page_icon=":moneybag:", layout="wide")
-st.markdown("""
-<style>
-body {
-    color: #fff;
-    background-color: #1e1e1e;
-}
-</style>
-    """, unsafe_allow_html=True)
+
 
 
 ticker_egg = yf.Ticker("EGP=x")
