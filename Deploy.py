@@ -9,9 +9,6 @@ import streamlit.components.v1 as components
 # Set dark mode
 st.set_page_config(page_title="Egyptian Financial Dashboard",
                    page_icon=":moneybag:", layout="wide")
-
-
-
 ticker_egg = yf.Ticker("EGP=x")
 
 logo_path = "LI_Logo.png"
@@ -43,7 +40,7 @@ st.markdown(
 crypto, stock = st.tabs(['Crypto', 'Stock'],)
 
 #######################################
-
+# st_tab
 with crypto:
     ticker = st.selectbox('Choose Stock', [
                           'BTC-USD', 'SHIB-USD', 'ETH-USD', 'XRP-USD', 'DOGE-USD', 'BNB-USD', 'USDT-USD'], key='1')
@@ -57,8 +54,11 @@ with crypto:
                      y=data_cr['Close'],
                      title=ticker,
                      markers=True)
+    st.write("<p style='text-align: center;color: red;'>Double Click The Chart to Min-Max</p>",
+             unsafe_allow_html=True)
     st.plotly_chart(fig_cr, use_container_width=True)
 
+# sec_Tab
 with stock:
     ticker = st.selectbox('Choose Stock', ['AAPL', 'AMZN', 'META', "AI", 'GOOGL', 'PLTR',
                                                    'MSFT', 'NFLX', 'TSLA', 'UNH', 'MA', 'ITUB', 'PYPL', 'DIS', 'BAC', 'KO', 'NIO', 'INTC', 'CVX'], key=4)
@@ -70,6 +70,8 @@ with stock:
                      y=data['Close'],
                      title=ticker,
                      markers=True)
+    st.write("<p style='text-align: center;color: red;'>Double Click The Chart to Min-Max</p>",
+             unsafe_allow_html=True)
     st.plotly_chart(fig_st, use_container_width=True)
 
 with st.container():
